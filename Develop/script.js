@@ -10,6 +10,10 @@ function changeTimingColors () {
 
 if (moment().isSame('LLLL')) {
     timeColor.setAttribute("class", "present");
-} }
+} else if (moment().isBefore('LLLL')) {
+    timeColor.setAttribute("class", "past");
+} else if (moment().isAfter('LLLL')) {
+    timeColor.setAttribute("class", "future");
+}}
 
 changeTimingColors();
