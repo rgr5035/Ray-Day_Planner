@@ -18,7 +18,15 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/Develop/style.css"/>
+
+
+    <!--External link to JQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+
+
+    <!--External link to CSS stylesheet-->
+    <link rel="stylesheet" href="./Develop/style.css"/>
     <title>Work Day Scheduler</title>
   </head>
 
@@ -30,69 +38,106 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-     
       <div class="row time-block">
         <div class=" col-md-2 hour">9:00 am</div>
-        <textarea class="col-md-8 description" id="text-color">Insert text here for planner</textarea>
-        <button class="col-md-2 saveBtn" id="saveBtn">Save</button>
+        <textarea class="col-md-8 description" data-hour="9" ></textarea>
+        <button class="col-md-2 saveBtn fas fa-save" data-hour="9"></button>
       </div>
       <div class="row time-block">
         <div class=" col-md-2 hour">10:00 am</div>
-        <textarea class="col-md-8 description" id="text-color" >Insert text here for planner</textarea>
-        <button class="col-md-2 saveBtn" id="saveBtn">Save</button>
+        <textarea class="col-md-8 description" data-hour="10"></textarea>
+        <button class="col-md-2 saveBtn fas fa-save" data-hour="10"></button>
       </div>
       <div class="row time-block">
         <div class=" col-md-2 hour">11:00 am</div>
-        <textarea class="col-md-8 description" id="text-color">Insert text here for planner</textarea>
-        <button class="col-md-2 saveBtn" id="saveBtn">Save</button>
+        <textarea class="col-md-8 description" data-hour="11"></textarea>
+        <button class="col-md-2 saveBtn fas fa-save" data-hour="11"></button>
       </div>
       <div class="row time-block">
         <div class=" col-md-2 hour">12:00 pm</div>
-        <textarea class="col-md-8 description" id="text-color">Insert text here for planner</textarea>
-        <button class="col-md-2 saveBtn">Save</button>
+        <textarea class="col-md-8 description" data-hour="12"></textarea>
+        <button class="col-md-2 saveBtn fas fa-save" data-hour="12" ></button>
       </div>
       <div class="row time-block">
         <div class=" col-md-2 hour">1:00 pm</div>
-        <textarea class="col-md-8 description" id="text-color">Insert text here for planner</textarea>
-        <button class="col-md-2 saveBtn">Save</button>
+        <textarea class="col-md-8 description" data-hour="13" ></textarea>
+        <button class="col-md-2 saveBtn fas fa-save" data-hour="13"></button>
       </div>
       <div class="row time-block">
         <div class=" col-md-2 hour">2:00 pm</div>
-        <textarea class="col-md-8 description" id="text-color">Insert text here for planner</textarea>
-        <button class="col-md-2 saveBtn">Save</button>
+        <textarea class="col-md-8 description" data-hour="14"></textarea>
+        <button class="col-md-2 saveBtn fas fa-save" data-hour="14"></button>
       </div>
       <div class="row time-block">
         <div class=" col-md-2 hour">3:00 pm</div>
-        <textarea class="col-md-8 description" id="text-color">Insert text here for planner</textarea>
-        <button class="col-md-2 saveBtn">Save</button>
+        <textarea class="col-md-8 description" data-hour="15"></textarea>
+        <button class="col-md-2 saveBtn fas fa-save" data-hour="15"></button>
       </div>
       <div class="row time-block">
         <div class=" col-md-2 hour">4:00 pm</div>
-        <textarea class="col-md-8 description" id="text-color">Insert text here for planner</textarea>
-        <button class="col-md-2 saveBtn">Save</button>
+        <textarea class="col-md-8 description" data-hour="16"></textarea>
+        <button class="col-md-2 saveBtn fas fa-save" data-hour="16"></button>
       </div>
       <div class="row time-block">
         <div class=" col-md-2 hour">5:00 pm</div>
-        <textarea class="col-md-8 description" id="text-color">Insert text here for planner</textarea>
-        <button class="col-md-2 saveBtn">Save</button>
+        <textarea class="col-md-8 description" data-hour="17"></textarea>
+        <button class="col-md-2 saveBtn fas fa-save" data-hour="17"></button>
       </div>
     </div>
 
-    <!-- <script type=text/javascript>
-    $(document).ready function () {
-      $("#currentDay").text(moment().format('LLLL');
-     
-    }
-    </script> -->
-
-
-
-
-
+    
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="/Develop/script.js" rel="stylesheet"> </script>
+
+<script type=text/javascript>
+
+      $('#currentDay').html(moment().format('LLLL'));
+
+      
+
+      $('.description').each(function(index, value) {
+        
+
+        var currentHour = $(this).attr("data-hour");
+        
+        if (currentHour < moment().hour()) {
+          $(this).addClass("past");
+        } else if (currentHour == moment().hour()) {
+          $(this).addClass("present");
+        } else if (currentHour > moment().hour()) {
+          $(this).addClass("future");
+          
+        }
+        //JSON parse, look to see if I need this                                                                                                              
+      })
+
+      
+     
+      $('.saveBtn').on('click', function(e) {
+        console.log("I'm clicked");
+        e.preventDefault();
+          var key = $(this).attr('data-hour');
+          var value = "";
+          localStorage.getItem(key, value); 
+
+          $('.desciption').each(function () {
+
+            
+            if (key === $(this).attr('data-hour')) {
+              value === $(this).attr('data-hour')
+            } 
+              $('.description').text(value);
+
+              
+          })
+         localStorage.setItem(key, value);
+          
+      })    
+    </script>
+
+
+    <!-- <script src="./Develop/script.js" rel="stylesheet"> </script> -->
   </body>
 </html>
