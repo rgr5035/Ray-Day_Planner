@@ -38,47 +38,47 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <div class="row time-block">
+      <div class="row time-block" id="hour-9">
         <div class=" col-md-2 hour">9:00 am</div>
-        <textarea class="col-md-8 description" data-hour="9" ></textarea>
+        <textarea class="col-md-8 description" data-hour="9"></textarea>
         <button class="col-md-2 saveBtn fas fa-save" data-hour="9"></button>
       </div>
-      <div class="row time-block">
+      <div class="row time-block" id="hour-10">
         <div class=" col-md-2 hour">10:00 am</div>
         <textarea class="col-md-8 description" data-hour="10"></textarea>
         <button class="col-md-2 saveBtn fas fa-save" data-hour="10"></button>
       </div>
-      <div class="row time-block">
+      <div class="row time-block" id="hour-11">
         <div class=" col-md-2 hour">11:00 am</div>
         <textarea class="col-md-8 description" data-hour="11"></textarea>
         <button class="col-md-2 saveBtn fas fa-save" data-hour="11"></button>
       </div>
-      <div class="row time-block">
+      <div class="row time-block" id="hour-12">
         <div class=" col-md-2 hour">12:00 pm</div>
         <textarea class="col-md-8 description" data-hour="12"></textarea>
         <button class="col-md-2 saveBtn fas fa-save" data-hour="12" ></button>
       </div>
-      <div class="row time-block">
+      <div class="row time-block" id="hour-13">
         <div class=" col-md-2 hour">1:00 pm</div>
-        <textarea class="col-md-8 description" data-hour="13" ></textarea>
+        <textarea class="col-md-8 description" data-hour="13"></textarea>
         <button class="col-md-2 saveBtn fas fa-save" data-hour="13"></button>
       </div>
-      <div class="row time-block">
+      <div class="row time-block" id="hour-14">
         <div class=" col-md-2 hour">2:00 pm</div>
         <textarea class="col-md-8 description" data-hour="14"></textarea>
         <button class="col-md-2 saveBtn fas fa-save" data-hour="14"></button>
       </div>
-      <div class="row time-block">
+      <div class="row time-block" id="hour-15">
         <div class=" col-md-2 hour">3:00 pm</div>
         <textarea class="col-md-8 description" data-hour="15"></textarea>
         <button class="col-md-2 saveBtn fas fa-save" data-hour="15"></button>
       </div>
-      <div class="row time-block">
+      <div class="row time-block" id="hour-16">
         <div class=" col-md-2 hour">4:00 pm</div>
         <textarea class="col-md-8 description" data-hour="16"></textarea>
         <button class="col-md-2 saveBtn fas fa-save" data-hour="16"></button>
       </div>
-      <div class="row time-block">
+      <div class="row time-block" id="hour-17">
         <div class=" col-md-2 hour">5:00 pm</div>
         <textarea class="col-md-8 description" data-hour="17"></textarea>
         <button class="col-md-2 saveBtn fas fa-save" data-hour="17"></button>
@@ -113,28 +113,41 @@
         //JSON parse, look to see if I need this                                                                                                              
       })
 
-      
-     
-      $('.saveBtn').on('click', function(e) {
-        console.log("I'm clicked");
-        e.preventDefault();
-          var key = $(this).attr('data-hour');
-          var value = "";
-          localStorage.getItem(key, value); 
+      $("#hour-9 .description").val(localStorage.getItem("hour-9"));
+      $("#hour-10 .description").val(localStorage.getItem("hour-10"));
+      $("#hour-11 .description").val(localStorage.getItem("hour-11"));
+      $("#hour-12 .description").val(localStorage.getItem("hour-12"));
+      $("#hour-13 .description").val(localStorage.getItem("hour-13"));
+      $("#hour-14 .description").val(localStorage.getItem("hour-14"));
+      $("#hour-15 .description").val(localStorage.getItem("hour-15"));
+      $("#hour-16 .description").val(localStorage.getItem("hour-16"));
+      $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 
-          $('.desciption').each(function () {
+      $('.saveBtn').on('click', function() {
+        // console.log("I'm clicked");
+        // e.preventDefault();
+        var textInput = $(this).siblings(".description").val();
+        var hour = $(this).parent().attr("id");
+        localStorage.setItem(hour, textInput);
+
+        });
+        //   var key = $(this).attr('data-hour');
+        //   var value = "";
+        //   localStorage.getItem(key, value); 
+
+        //   $('.desciption').each(function () {
 
             
-            if (key === $(this).attr('data-hour')) {
-              value === $(this).attr('data-hour')
-            } 
-              $('.description').text(value);
+        //     if (key === $(this).attr('data-hour')) {
+        //       value === $(this).attr('data-hour')
+        //     } 
+        //       $('.description').text(value);
 
               
-          })
-         localStorage.setItem(key, value);
+        //   })
+        //  localStorage.setItem(key, value);
           
-      })    
+         
     </script>
 
 
