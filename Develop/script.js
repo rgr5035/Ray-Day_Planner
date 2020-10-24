@@ -1,6 +1,6 @@
 
 
-$('#currentDay').html(moment().format('LLLL'));
+$('#currentDay').html(moment().format('dddd, MMMM Do YYYY'));
 
 $('.description').each(function(index, value) {
         
