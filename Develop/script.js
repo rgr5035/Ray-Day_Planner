@@ -1,10 +1,12 @@
 
-
+//setting the current date in the #currentDay class header of HTML
 $('#currentDay').html(moment().format('dddd, MMMM Do YYYY'));
 
+
+//for each loop to determine the hour timing of each block to correctly color-code to past, present or future
 $('.description').each(function(index, value) {
         
-
+    //setting the variable currentHour to the attribute 'data-hour' found in the textarea
     var currentHour = $(this).attr("data-hour");
         
     if (currentHour < moment().hour()) {
@@ -13,12 +15,10 @@ $('.description').each(function(index, value) {
         $(this).addClass("present");
     } else if (currentHour > moment().hour()) {
         $(this).addClass("future");
-    
     }
-        //JSON parse, look to see if I need this                                                                                                              
     })
 
-
+//setting local Storage to each <section> with the id of #hour-
 $("#hour-9 .description").val(localStorage.getItem("hour-9"));
 $("#hour-10 .description").val(localStorage.getItem("hour-10"));
 $("#hour-11 .description").val(localStorage.getItem("hour-11"));
@@ -37,6 +37,7 @@ $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 
       // })
 
+//setting the onClick event handler to the .saveBtn <button> to save text into local storage
 $('.saveBtn').on('click', function(e) {
       
     e.preventDefault();
