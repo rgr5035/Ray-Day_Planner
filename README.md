@@ -11,3 +11,13 @@ Time Block Colors
 Text-area storage
 
     By utilizing local storage and assigning each row with a specific id, I was able to set the event handler on the 'save' button to save whatever content was entered by the user. If the user leaves or refreshes the page, the text will remain saved in the sepcified time block text area.
+
+Screenshot
+
+    ![image](https://user-images.githubusercontent.com/70773240/97114486-620fe580-16b6-11eb-8c26-104e0d62365b.png)
+
+Links to Github & Live Site
+
+    Github: https://github.com/rgr5035/Ray-Day_Planner
+
+    Live Site: https://rgr5035.github.io/Ray-Day_Planner/
