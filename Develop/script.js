@@ -29,13 +29,6 @@ $("#hour-15 .description").val(localStorage.getItem("hour-15"));
 $("#hour-16 .description").val(localStorage.getItem("hour-16"));
 $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 
-      // $(".description").each(function ()  {
-
-      //   var hourNUm = `hour-${$(this).attr("data-hour")}`
-
-      //   $(this).val(localStorage.getItem(hourNum));
-
-      // })
 
 //setting the onClick event handler to the .saveBtn <button> to save text into local storage
 $('.saveBtn').on('click', function(e) {
