@@ -1,23 +1,39 @@
-# Ray-Day_Planner
+# Work Day Planner
 
-Assignment Overview
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-    This week's homework requirement was to create a work day scheduler, with time blocks that will actively color change based on the current time, and will show either as past (grey), present (red), or future (green). Additionally, the text enrtered into the time blocks will be saved into local storage and will remain saved even if the page is reloaded or exited and re-entered. By using moment.js, I was also able to have the current date showing in the jumbotron header of the page.
+## Description
 
-Time Block Colors
+This is a scheduling application to keep your busy work day organized. The application breaks the work day into hour blocks for you to enter various goals and meetings to complete for the day ahead. 
 
-    The time blocks were formatted utilizing the grid system by being placed in rows along with notated columms for each div. In order to generate the correct color for past, present, or future, I utilized the moment.js site and created an if/else statement for each color class to correspond with the correct hour of the day.
+## Table of Contents
 
-Text-area storage
+* [Installation](#installation)
+* [Usage](#usage)
+* [Screenshot](#screenshot)
+* [Contributing](#contributing)
+* [Questions](#questions)
 
-    By utilizing local storage and assigning each row with a specific id, I was able to set the event handler on the 'save' button to save whatever content was entered by the user. If the user leaves or refreshes the page, the text will remain saved in the sepcified time block text area.
+## Installation
 
-Screenshot
+Please follow the live site link to view the application: https://rgr5035.github.io/Ray-Day_Planner/
 
-    ![image](https://user-images.githubusercontent.com/70773240/97114486-620fe580-16b6-11eb-8c26-104e0d62365b.png)
+## Usage
 
-Links to Github & Live Site
+As a user, you can see a snapshot of your current work day with the current date. The application breaks down your work day into hour time slots, where the user can enter specific information needed to complete by that time. The application will depict the current hour in red, past hours in grey, and future hours in green, to quickly let the user know where he/she is in the work day. Any text entered will be saved for that time slot. 
 
-    Github: https://github.com/rgr5035/Ray-Day_Planner
+## Screenshot 
 
-    Live Site: https://rgr5035.github.io/Ray-Day_Planner/
+![Day-Planner-App](https://user-images.githubusercontent.com/70773240/107285618-aaac9e00-6a1c-11eb-90d7-d7ba9ca60789.png)
+
+## Contributing
+
+Please send any contributions to Robby Ray (contact information below)
+
+
+## Questions
+
+For more information about this application, or if you have any additional questions, do not hesitate to reach out to me via GitHub or E-mail.
+
+- [Github](https://www.github.com/rgr5035)
+- [Email](mailto:rgr5035@gmail.com)
